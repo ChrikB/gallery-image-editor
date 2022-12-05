@@ -53,6 +53,7 @@
     }
     .socials .form-check span input{
       height: 22px;
+      max-width: 100px;
     }
     .flex-column{
       max-width: 200px;
@@ -201,6 +202,7 @@
                     <div class="col" id="template-cont"></div>
                     <div class="col-12 col-xs-12  col-sm-12 col-md-12 col-lg-6 col-xl-6">
                         <div class="responsive-canvas" style="overflow: hidden;">
+                          <div class="c-overlay" style="position:absolute;width:100%;height:100%;background: rgba(0,0,0,0.01);opacity:0.01;z-index:1;"></div>
                           <canvas id="canvas" width="400" height="520"></canvas>
                         </div>
                     </div>
