@@ -15,7 +15,7 @@ class ModelCanvas{
 		if (onRender){
 			this.onRender = onRender; 
 		}
-		this.F = new fabric.Canvas(this.canvas, { selection: false });
+		this.F = new fabric.Canvas(this.canvas, { selection: false, allowTouchScrolling: true });
 	    // this.render();
 	    if (onInit){
 		  onInit(this);
@@ -56,7 +56,7 @@ class ModelCanvas{
 		  bounds = {
 			left:0,
 			top:0,
-			width: 400,
+			width: 330,
 			height: 500
 		  };
 	  }
@@ -144,7 +144,8 @@ class ModelCanvas{
 		shadow: shadow,
 		styles: styles,
 		selectable: false,
-		evented: false
+		hoverCursor: 'default',
+		__evented: false
 	  });
 	  THAT.F.add(textbox);
 	  textbox.center();
@@ -176,7 +177,8 @@ class ModelCanvas{
 		  stroke: 'black',
 		  strokeWidth: 1,
 		  selectable: false,
-		  evented: false
+		  hoverCursor: 'default',
+		  __evented: false
 	  });
 	  canvas.add(rect);
 	  
@@ -189,7 +191,8 @@ class ModelCanvas{
 		fill: 'white',
 		textAlign: "center",
 		selectable: false,
-		evented: false
+		__evented: false,
+		hoverCursor: 'default'
 	  });
 	  THAT.F.add(textbox2);
 	  textbox2.center();
@@ -287,7 +290,8 @@ class ModelCanvas{
 		top:(canvas.height-150), 
 		left: (canvas.width-150),
 		selectable: false,
-		evented: false
+		__evented: false,
+		hoverCursor: 'default'
 	  });
 	  canvas.add(group);
 	}

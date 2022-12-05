@@ -104,13 +104,19 @@ class Gallery {
 		/* adding 'edit' button and inject it to each gallery slot  */
 		let editBtn = document.createElement('button');
   
+		/* create an overlay infront of canvas for touch scrolling */
+		let overlay = document.createElement('div');
+		overlay.setAttribute('style', 'position:absolute;width:100%;height:100%;background: rgba(0,0,0,0.01);opacity:0.01;z-index:1;');
+
 		let modelToCanvas =  new ModelCanvas(this.gallery[i], c, function(t){
 		  editBtn.style.display = 'none';
 		  editBtn.style.position = 'absolute';
+		  editBtn.style.zIndex = 2;
 		  editBtn.setAttribute('class', 'btn btn-danger');
 		  editBtn.innerHTML = 'Edit';
 		  t.F.wrapperEl.appendChild(editBtn);
-  
+		  t.F.wrapperEl.appendChild(overlay);
+
 		  editBtn.addEventListener('click',function(){ 
 		  
   
@@ -136,7 +142,7 @@ class Gallery {
 		  editBtn.style.display = '';
 		}); 
 		this._gallery[i] = modelToCanvas;
-  
+
 		modelToCanvas.render();
 	  }
 	}
